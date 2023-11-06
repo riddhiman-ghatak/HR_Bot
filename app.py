@@ -13,7 +13,8 @@ nlp = pipeline('question-answering', model=model, tokenizer=tokenizer)
 st.title("HR Hive bot")
 
 # Input field for the context
-context = st.text_area("Enter the context:", "An internship is...")
+#context = st.text_area("Enter the context:", "An internship is...")
+context = ("An internship is a valuable and immersive learning experience that provides students or individuals with the opportunity to gain real-world work experience in their chosen field. During an internship, participants have the chance to apply their academic knowledge to practical situations, develop essential skills, and build a professional network. Internships can be found in various industries, ranging from business and technology to healthcare and the arts. These experiences offer a unique insight into the daily operations of a company or organization and often serve as a stepping stone for future career opportunities. Internships are not only a great way to enhance one's resume but also a crucial means of personal and professional growth, allowing individuals to explore their interests and determine if a specific career path aligns with their aspirations.")
 
 # Input field for the question
 question = st.text_input("Ask a question:", "What is an internship?")
@@ -30,6 +31,6 @@ if st.button("Get Answer"):
         # Display the answer
         st.write("Answer:", answer['answer'])
 
-# Optionally, you can add more Streamlit elements, customize the layout, and enhance the user interface as needed.
+# Optionally, you can add more Streamlit elements, customize the layout, a
 
 
