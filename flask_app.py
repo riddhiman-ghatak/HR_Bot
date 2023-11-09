@@ -1,36 +1,57 @@
-# app.py
-
-from flask import Flask, render_template
-from streamlit import StreamlitCliRunner
+from flask import Flask, render_template, request
+from transformers import BertForQuestionAnswering
+from transformers import AutoTokenizer
+from transformers import pipeline
 
 app = Flask(__name__)
 
-# Define the Streamlit app as a function
-def run_streamlit():
-    runner = StreamlitCliRunner()
-    args = ["streamlit", "run", "app2.py"]
-    runner.invoke(args)
+# Your existing code for model loading and setup
+model = BertForQuestionAnswering.from_pretrained('deepset/bert-base-cased-squad2')
+tokenizer = AutoTokenizer.from_pretrained('deepset/bert-base-cased-squad2')
+nlp = pipeline('question-answering', model=model, tokenizer=tokenizer)
+valid_username = "user"
+valid_password = "password"
 
-# Define routes for different pages
-@app.route("/")
+# Dummy context for demonstration
+file_path = "dataset.txt"
+try:
+    with open(file_path, "r") as file:
+        text = file.read()
+except FileNotFoundError:
+    text = ""
+except Exception as e:
+    text = ""
+
+context = text
+
+# Define routes
+@app.route('/')
 def home():
-    return render_template("index.html")
+    return render_template('home.html', context=context)
 
-@app.route("/faq")
+@app.route('/faq')
 def faq():
-    return render_template("faq.html")
+    # Add FAQ content here
+    return render_template('faq.html')
 
-@app.route("/contact")
+@app.route('/contact')
 def contact():
-    return render_template("contact.html")
+    # Add contact information or a contact form here
+    return render_template('contact.html')
 
-@app.route("/login")
+@app.route('/login', methods=['GET', 'POST'])
 def login():
-    return render_template("login.html")
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
 
-# Run the Streamlit app when the Flask app starts
-if __name__ == "__main__":
-    run_streamlit()
+        if username == valid_username and password == valid_password:
+            return "Login Successful!"
+            # You can add code here to grant access to protected pages
+        else:
+            return "Login Failed. Please check your credentials."
 
-    # Run the Flask app
+    return render_template('login.html')
+
+if __name__ == '__main__':
     app.run(debug=True)
