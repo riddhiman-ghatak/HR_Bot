@@ -5,7 +5,7 @@ from transformers import pipeline
 
 app = Flask(__name__)
 
-# Your existing code for model loading and setup
+# model loading and setup
 model = BertForQuestionAnswering.from_pretrained('deepset/bert-base-cased-squad2')
 tokenizer = AutoTokenizer.from_pretrained('deepset/bert-base-cased-squad2')
 nlp = pipeline('question-answering', model=model, tokenizer=tokenizer)
@@ -25,14 +25,49 @@ except Exception as e:
 context = text
 
 # Define routes
-@app.route('/')
+# @app.route('/')
+# def home():
+#     return render_template('home.html', context=context)
+
+# @app.route('/get_answer', methods=['POST'])
+# def get_answer():
+#     question = request.form['question']
+
+#     if context and question:
+#         # Get the answer using the question-answering model
+#         answer = nlp({
+#             'question': question,
+#             'context': context
+#         })
+#         return render_template('home.html', answer=answer['answer'])
+#     else:
+#         return "Context or question is missing. Please provide both."
+
+@app.route('/', methods=['GET', 'POST'])
 def home():
-    return render_template('home.html', context=context)
+    answer = None
+
+    if request.method == 'POST':
+        question = request.form['question']
+
+        if context and question:
+            # Get the answer using the question-answering model
+            answer = nlp({
+                'question': question,
+                'context': context
+            })
+
+    return render_template('home.html', answer=answer)
 
 @app.route('/faq')
 def faq():
     # Add FAQ content here
     return render_template('faq.html')
+
+@app.route('/about')
+def about():
+    # Add FAQ content here
+    return render_template('about.html')
 
 @app.route('/contact')
 def contact():
