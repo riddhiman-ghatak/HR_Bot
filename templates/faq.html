@@ -19,13 +19,12 @@
         }
 
         h1 {
+
+            position: absolute;
+            top: 20%;
+            left: 5%;
             color: #fff;
-            text-align: center;
-            padding: 20px;
-            background-color: #333;
-            /* Set text color to white or a color that contrasts well with your background */
-            margin: 20px;
-            /* Add margin for better spacing */
+
         }
 
         .login-button {
@@ -84,32 +83,28 @@
             /* Set hover text color for the buttons */
         }
 
-        .faq-container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        .faq-section1 {
+            margin-bottom: 1px;
+            position: absolute;
+            top: 35%;
+            left: 5%;
+            color: #fff;
         }
 
-        .faq {
-            margin-bottom: 20px;
+        .faq-section2 {
+            margin-bottom: 1px;
+            position: absolute;
+            top: 55%;
+            left: 5%;
+            color: #fff;
         }
 
-        .question {
-            font-weight: bold;
-            color: #333;
-            cursor: pointer;
-        }
-
-        .answer {
-            display: none;
-            color: #666;
-            margin-top: 10px;
-        }
-
-        .answer.active {
-            display: block;
+        .faq-section3 {
+            margin-bottom: 1px;
+            position: absolute;
+            top: 75%;
+            left: 5%;
+            color: #fff;
         }
     </style>
 </head>
@@ -120,27 +115,27 @@
         <a href="/contact">Contact</a>
         <a href="/about">About</a>
     </div>
+
+    <a href="/login" class="login-button">Login</a>
+
     <h1>Frequently Asked Questions</h1>
-    <!-- Add your FAQ content here -->
-    <div class="faq-container">
-        <div class="faq">
-            <div class="question">Q: What is Amazon?</div>
-            <div class="answer">A: Amazon is an American multinational technology company that focuses on e-commerce,
-                cloud computing, digital streaming, artificial intelligence, and more.</div>
-        </div>
-
-        <div class="faq">
-            <div class="question">Q: How can I shop on Amazon?</div>
-            <div class="answer">A: To shop on Amazon, visit the website, create an account, browse products, add items
-                to your cart, and proceed to checkout for payment and delivery options.</div>
-        </div>
-
-        <div class="faq">
-            <div class="question">Q: Is Amazon Prime worth it?</div>
-            <div class="answer">A: Amazon Prime offers benefits like fast shipping, access to Prime Video, and more.
-                Whether it's worth it depends on your shopping and entertainment preferences.</div>
-        </div>
+    <div class="faq-section1">
+        <h2>Q1: What is the purpose of this service?</h2>
+        <h3>A1: The service aims to provide assistance related to HR related queries.</h3>
     </div>
+
+    <div class="faq-section2">
+        <h2>Q2: How can I access the service?</h2>
+        <h3>A2: Visit our website and interact with the AI model.</h3>
+    </div>
+
+    <div class="faq-section3">
+        <h2>Q3: Is there a cost associated with using this service?</h2>
+        <h3>A3: No, our service is currently free to use.</h3>
+    </div>
+
+    <!-- Add your FAQ content here -->
+
 
 </body>
 

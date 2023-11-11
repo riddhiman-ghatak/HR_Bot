@@ -5,10 +5,158 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HR Hive Bot - Contact</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('../static/images/homepage.png');
+            /* Replace with your actual photo URL */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+        }
+
+        h1 {
+            position: absolute;
+            color: #fff;
+            /* Set text color to white or a color that contrasts well with your background */
+            margin: 20px;
+            top: 17%;
+            left: 5%;
+
+        }
+
+        h2 {
+            color: #fff;
+            /* Set text color to white or a color that contrasts well with your background */
+            margin: 10px;
+            top: 32%;
+            left: 6%;
+            position: absolute;
+        }
+
+
+        .login-button {
+            position: absolute;
+            top: 69px;
+            right: 60px;
+            color: #fff;
+            /* Set text color to white or a color that contrasts well with your background */
+            text-decoration: none;
+            padding: 10px;
+            background-color: #4CAF50;
+            /* Set background color for the button */
+            display: flex;
+            align-items: center;
+            /* Center vertically */
+            border-radius: 10px;
+            width: 60px;
+            transition: background-color 0.3s ease;
+            /* Add smooth transition */
+        }
+
+        .login-button span {
+            margin: 20px;
+            /* Center horizontally */
+        }
+
+        .login-button:hover {
+            background-color: #fff;
+            /* Set hover background color for the button */
+            color: #4CAF50;
+            /* Set hover text color for the button */
+        }
+
+        .top-buttons {
+            position: absolute;
+            top: 80px;
+            left: 50%;
+        }
+
+        .top-buttons a {
+            margin-right: 100px;
+            text-decoration: none;
+            color: #fff;
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            border: 2px solid #fff;
+            /* Add smooth transition */
+        }
+
+        .top-buttons a:hover {
+            background-color: #fff;
+            /* Set hover background color for the buttons */
+            color: #4CAF50;
+            /* Set hover text color for the buttons */
+        }
+
+        .contact-container {
+            max-width: 800px;
+            margin: auto;
+            top: 40%;
+            left: 7%;
+            position: absolute;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            color: #fff;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body>
+    <div class="top-buttons">
+        <a href="/faq">FAQ</a>
+        <a href="/contact">Contact</a>
+        <a href="/about">About</a>
+    </div>
+
+    <a href="/login" class="login-button">Login</a>
+
+
     <h1>Contact Us</h1>
+    <h2>If you have any query feel free to reach out to us </h2>
+    <div class="contact-container">
+
+
+
+        <form action="#" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
     <!-- Add your contact information or form here -->
 </body>
 
