@@ -74,6 +74,8 @@ def contact():
     # Add contact information or a contact form here
     return render_template('contact.html')
 
+
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
@@ -81,7 +83,8 @@ def login():
         password = request.form['password']
 
         if username == valid_username and password == valid_password:
-            return "Login Successful!"
+            #return "Login Successful!"
+            return render_template('home.html')
             # You can add code here to grant access to protected pages
         else:
             return "Login Failed. Please check your credentials."
