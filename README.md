@@ -74,7 +74,7 @@ You can install the required Python packages using the provided `requirements.tx
 ### Flask app
 
 ![home page (flask app)](assets/home.png)
-![about page (flask app)](assets/about.png)
+![about page (flask app)](assets/about us.png)
 
 ### Streamlit app
 ![home page (streamlit app)](assets/home_lit.png)
